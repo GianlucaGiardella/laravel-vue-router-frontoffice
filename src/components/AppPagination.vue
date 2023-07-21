@@ -1,17 +1,14 @@
 <script>
+import { store } from "../store";
+
 export default {
     data() {
         return {
+            store,
             currentPage: 1,
         };
     },
-    props: {
-        MaxPages: Number,
-    },
     methods: {
-        sendCurrentPage() {
-            this.$emit('sendCurrentPage', this.currentPage);
-        },
         toPrevPage() {
             if (this.currentPage !== 1) {
                 this.currentPage--;
@@ -25,7 +22,7 @@ export default {
     },
     watch: {
         currentPage() {
-            this.sendCurrentPage();
+            this.store.page = this.currentPage;
         },
     }
 }
@@ -33,7 +30,7 @@ export default {
 
 <template>
     <div class="pagination">
-        <vue-awesome-paginate :total-items="MaxPages" :items-per-page="6" :max-pages-shown="5" v-model="currentPage">
+        <vue-awesome-paginate :total-items="store.maxPages" :items-per-page="6" :max-pages-shown="5" v-model="store.page">
             <template @click="toPrevPage">
                 <span> Previous </span>
             </template>
