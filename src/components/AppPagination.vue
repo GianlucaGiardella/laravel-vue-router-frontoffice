@@ -15,7 +15,7 @@ export default {
             }
         },
         toNextPage() {
-            if (this.currentPage !== this.MaxPages) {
+            if (this.currentPage !== this.maxPages) {
                 this.currentPage++;
             };
         },
