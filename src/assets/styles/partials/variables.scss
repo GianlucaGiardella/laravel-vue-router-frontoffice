@@ -1,0 +1,22 @@
+
+$c-bg: #190D1C;
+$c-bg-f: #2F1B2C;
+$c-bg-i: #946851;
+$c-bg-txt: #F58F42;
+
+
+
+///**MIXIN**///
+@mixin dfc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin dfa {
+    display: flex;
+    align-items: center;
+}
+@mixin dfj {
+    display: flex;
+    justify-content: center;
+}
